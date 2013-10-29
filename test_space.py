@@ -121,6 +121,9 @@ class TestToStr(TestCase):
         self.assertEqual(space.__str__(), 'hello world\n')
         space.set('foo', 'bar')
         self.assertEqual(space.__str__(), 'foo bar\nhello world\n')
+        
+        space = Space('hello world\nline two')
+        self.assertEqual(space.__str__(), 'hello world\nline two')
 
         space2 = Space('john\n age 5')
         self.assertEqual(space2.__str__(), 'john\n age 5\n')
